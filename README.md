@@ -124,7 +124,7 @@ npm run dev
 
 
 4. **Open your browser:**
-Navigate to [http://localhost:3000]() to see the application.
+Navigate to [https://taxoga-zeta.vercel.app/] to see the application.
 
 ## ⚙️ Configuration
 

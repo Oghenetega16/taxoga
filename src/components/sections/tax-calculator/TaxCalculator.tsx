@@ -89,7 +89,7 @@ export function TaxCalculator({ activeTab, setActiveTab }: TaxCalculatorProps) {
                 <div className="px-4 md:px-0">
                     {activeTab === "Personal" && <TaxBracketsTable />}
 
-                    <div className={`border border-brand-blue bg-white rounded-3xl shadow-xs p-4 flex gap-3 items-start ${activeTab === "Company" ? 'lg:mt-32' : 'mt-8'}`}>
+                    <div className={`border border-brand-blue bg-white rounded-[10px] shadow-xs p-4 flex gap-3 items-start ${activeTab === "Company" ? 'lg:mt-32' : 'mt-8'}`}>
                         <InfoIcon className="w-4 h-4 text-brand-black shrink-0" />
                         <p className="text-[#717182] text-sm leading-5">
                             This calculator uses the latest tax brackets and rates from Nigeria&apos;s Tax Act 2025. The first ₦800,000 of annual income is tax-free. Results are estimates and should be verified with one of our tax professionals.
