@@ -1,65 +1,62 @@
 import Image from "next/image";
+import { Footer } from "@/components/layout/Footer";
+import { Navbar } from "@/components/layout/Navbar";
+import { Community } from "@/components/sections/home/Community";
+import { FAQ } from "@/components/sections/home/FAQ";
+import { GetStarted } from "@/components/sections/home/GetStarted";
+import { Hero } from "@/components/sections/home/Hero";
+import { HowItWorks } from "@/components/sections/home/HowItWorks";
+import { Testimonials } from "@/components/sections/home/Testimonials";
+import { Trust } from "@/components/sections/home/Trust";
+import { WhoWeServe } from "@/components/sections/home/WhoWeServe";
+import { Chat } from "@/components/ui/Chat";
+import { MessageCard } from "@/components/ui/MessageCard";
+import MessageIconSrc from "../../public/messageSquare.svg"
 
 export default function Home() {
-  return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    return (
+        <div className="min-h-screen bg-white">
+            <Navbar />
+
+            <div className="relative">
+                <Hero />
+                <Chat />
+                <div className="absolute -bottom-45 md:-bottom-35 left-1/2 -translate-x-1/2 flex flex-col items-center z-20">
+                    <MessageCard 
+                        intro="Did you know?" 
+                        message="You don’t need to pay tax if you earn more than N50 Million Naira"
+                        className="z-80 md:-mr-10"
+                    />
+
+                    <div className="hidden md:flex">
+                        <MessageCard 
+                            intro="I am Tunder" 
+                            message="Ask me anything about taxes in Nigeria." 
+                            className="z-20 -mt-5"
+                        />
+                    </div>
+                    <div className="hidden w-16.25 h-16.25 bg-brand-blue rounded-xl md:flex items-center justify-center">
+                        <Image 
+                            src={MessageIconSrc} 
+                            alt="Message Icon" 
+                            className="w-8 h-8" 
+                            // Note: 'fill-white' wont work here. The SVG must be white text internally.
+                        />
+                    </div>
+                </div>
+            </div>
+
+            <HowItWorks />
+            <WhoWeServe />
+            <Trust />
+            <Testimonials />
+            <Community />
+
+            <div className="bg-white pl-5 pr-3 md:px-15 lg:px-20">
+                <FAQ />
+                <GetStarted />
+            </div>
+            <Footer />
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
-  );
+    );
 }
